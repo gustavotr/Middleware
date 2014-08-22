@@ -133,7 +133,7 @@ and open the template in the editor.
                 <input type="submit" value="Enviar"/>
             </form>
             <form method="post">
-                <h3>Comprar ou Vender</h3>
+                <h3>Monitorar</h3>
                 <input type="hidden" name="acao" value="monitorar"/>
                 <label for="empresa">Empresa</label>
                 <input id="empresa" name="empresa" type="text"/>                
@@ -141,6 +141,15 @@ and open the template in the editor.
             </form>
         </div>
         <?php
+        $sql = "SELECT * FROM notificacoes";
+        $ret = $db->query($sql);
+
+        while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
+            echo "<script language=\"javascript\" type=\"text/javascript\">
+                    alert('".$row['texto']."');
+                </script>";
+        }     
+        
         $db->close();
         ?>
     </body>

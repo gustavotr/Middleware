@@ -35,7 +35,11 @@
            quantidade   INT         NOT NULL,
            preco        DOUBLE      NOT NULL
         );
-           
+          
+        CREATE TABLE IF NOT EXISTS notificacoes (
+           id           INTEGER     PRIMARY KEY   AUTOINCREMENT,
+           texto        TEXT        NOT NULL
+        );           
 EOF;
 
    $ret = $db->exec($sql);
