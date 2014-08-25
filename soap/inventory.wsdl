@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<definitions name='Inventory'
+  targetNamespace='urn:JimmyzInventory'
+  xmlns:tns='urn:JimmyzInventory'
+  xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:soapenc='http://schemas.xmlsoap.org/soap/encoding/'
+  xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+  xmlns='http://schemas.xmlsoap.org/wsdl/'>
+
+<message name="notificar">
+<part name="parameters" element="tns:notificar"/>
+</message>
+<message name="notificarResponse">
+<part name="parameters" element="tns:notificarResponse"/>
+</message>
+
+<portType name='InventoryPortType'>
+  <operation name="notificar">
+    <input message="tns:notificar"/>
+    <output message='tns:notificarResponse'/>
+  </operation>
+</portType>
+
+<binding name='InventoryBinding' type='tns:InventoryPortType'>
+  <soap:binding style='rpc'
+    transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='notificar'>
+    <soap:operation soapAction='urn:xmethods-delayed-quotes#notificar'/>
+    <input>
+      <soap:body use='encoded' namespace='urn:xmethods-delayed-quotes'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </input>
+    <output>
+      <soap:body use='encoded' namespace='urn:xmethods-delayed-quotes'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </output>
+  </operation>
+</binding>
+
+<service name='InventoryService'>
+  <port name='InventoryPort' binding='InventoryBinding'>
+    <soap:address location='http://localhost/middlewareCliente/soap/server.php'/>
+  </port>
+</service>
+</definitions>
