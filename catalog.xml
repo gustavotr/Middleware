@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8081/Middleware/Middleware?wsdl" uri="src/conf/xml-resources/web-service-references/Middleware/wsdl/localhost_8081/Middleware/Middleware.wsdl"/>
+    <system systemId="http://localhost:8081/Middleware/Middleware?WSDL" uri="src/conf/xml-resources/web-services/WSDLService/wsdl/localhost_8081/Middleware/Middleware.wsdl"/>
+    <system systemId="http://localhost:8081/Middleware/Middleware?xsd=1" uri="src/conf/xml-resources/web-services/WSDLService/wsdl/localhost_8081/Middleware/Middleware.xsd_1.xsd"/>
+</catalog>

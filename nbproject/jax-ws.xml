@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="Cliente">
+      <implementation-class>ws.Cliente</implementation-class>
+    </service>
+    <service name="Middleware">
+      <implementation-class>ws.Middleware</implementation-class>
+    </service>
+  </services>
+  <clients>
+  </clients>
+  <jsr109>true</jsr109>
+</jax-ws>
